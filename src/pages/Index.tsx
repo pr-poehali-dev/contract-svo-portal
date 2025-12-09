@@ -1,12 +1,28 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from 'react';
+import Header from '@/components/Header';
+import Hero from '@/components/Hero';
+import About from '@/components/About';
+import HowTo from '@/components/HowTo';
+import Requirements from '@/components/Requirements';
+import FAQ from '@/components/FAQ';
+import Contact from '@/components/Contact';
+import ChatBot from '@/components/ChatBot';
+import Footer from '@/components/Footer';
 
 const Index = () => {
+  const [isChatOpen, setIsChatOpen] = useState(false);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4 color-black text-black">Добро пожаловать!</h1>
-        <p className="text-xl text-gray-600">тут будет отображаться ваш проект</p>
-      </div>
+    <div className="min-h-screen">
+      <Header />
+      <Hero />
+      <About />
+      <HowTo />
+      <Requirements />
+      <FAQ />
+      <Contact />
+      <Footer />
+      <ChatBot isOpen={isChatOpen} onToggle={() => setIsChatOpen(!isChatOpen)} />
     </div>
   );
 };
