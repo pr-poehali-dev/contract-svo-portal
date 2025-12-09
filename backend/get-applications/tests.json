@@ -1,0 +1,17 @@
+{
+  "tests": [
+    {
+      "name": "Get applications list",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 200,
+      "expectedBody": {
+        "applications": "array",
+        "total": "number",
+        "limit": "number",
+        "offset": "number"
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}

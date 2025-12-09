@@ -11,20 +11,42 @@ const Contact = () => {
     message: '',
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    toast({
-      title: 'Заявка отправлена!',
-      description: 'Наш специалист свяжется с вами в ближайшее время.',
-    });
-
-    setFormData({
-      name: '',
-      phone: '',
-      citizenship: '',
-      message: '',
-    });
+    try {
+      const response = await fetch('https://functions.poehali.dev/af7c5144-f970-4caa-90d3-479cdfa764dc', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      
+      const data = await response.json();
+      
+      if (response.ok && data.success) {
+        toast({
+          title: 'Заявка отправлена!',
+          description: 'Наш специалист свяжется с вами в ближайшее время.',
+        });
+        
+        setFormData({
+          name: '',
+          phone: '',
+          citizenship: '',
+          message: '',
+        });
+      } else {
+        throw new Error(data.error || 'Ошибка отправки');
+      }
+    } catch (error) {
+      toast({
+        title: 'Ошибка',
+        description: 'Не удалось отправить заявку. Попробуйте позже.',
+        variant: 'destructive',
+      });
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -35,7 +57,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-blue-50/30 via-white to-red-50/30">
+    <section id="contact" className="py-20 bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <div className="inline-block mb-4">
@@ -54,7 +76,7 @@ const Contact = () => {
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           <div className="space-y-8">
-            <div className="bg-white rounded-2xl p-8 shadow-lg border border-border">
+            <div className="bg-card rounded-2xl p-8 shadow-lg border border-border">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-semibold mb-2">
@@ -145,22 +167,22 @@ const Contact = () => {
           </div>
 
           <div className="space-y-6">
-            <div className="bg-white rounded-2xl p-8 shadow-lg border border-border hover:shadow-xl transition-all duration-300">
+            <div className="bg-card rounded-2xl p-8 shadow-lg border border-border hover:shadow-xl transition-all duration-300">
               <div className="flex items-start gap-4">
                 <div className="bg-primary/10 p-4 rounded-xl">
                   <Icon name="Phone" size={28} className="text-primary" />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold mb-2">Телефон горячей линии</h3>
-                  <a href="tel:88003026735" className="text-2xl font-bold text-primary hover:text-secondary transition-colors">
-                    8 (800) 302-67-35
+                  <a href="tel:+79990955559" className="text-2xl font-bold text-primary hover:text-secondary transition-colors">
+                    +7 (999) 095-55-59
                   </a>
-                  <p className="text-muted-foreground mt-2">Бесплатно по всей России, круглосуточно</p>
+                  <p className="text-muted-foreground mt-2">Работаем круглосуточно</p>
                 </div>
               </div>
             </div>
 
-            <div className="bg-white rounded-2xl p-8 shadow-lg border border-border hover:shadow-xl transition-all duration-300">
+            <div className="bg-card rounded-2xl p-8 shadow-lg border border-border hover:shadow-xl transition-all duration-300">
               <div className="flex items-start gap-4">
                 <div className="bg-secondary/10 p-4 rounded-xl">
                   <Icon name="MessageSquare" size={28} className="text-secondary" />
@@ -170,7 +192,7 @@ const Contact = () => {
                   <p className="text-muted-foreground mb-3">Связаться с куратором в мессенджерах</p>
                   <div className="flex gap-3">
                     <a
-                      href="https://wa.me/88003026735"
+                      href="https://wa.me/79990955559"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 bg-green-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-green-600 transition-colors text-sm"
@@ -179,7 +201,7 @@ const Contact = () => {
                       WhatsApp
                     </a>
                     <a
-                      href="https://t.me/+88003026735"
+                      href="https://t.me/+79990955559"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 bg-blue-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-600 transition-colors text-sm"
@@ -192,7 +214,7 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="bg-white rounded-2xl p-8 shadow-lg border border-border hover:shadow-xl transition-all duration-300">
+            <div className="bg-card rounded-2xl p-8 shadow-lg border border-border hover:shadow-xl transition-all duration-300">
               <div className="flex items-start gap-4">
                 <div className="bg-primary/10 p-4 rounded-xl">
                   <Icon name="Clock" size={28} className="text-primary" />
@@ -205,8 +227,8 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="bg-gradient-to-r from-primary to-secondary rounded-2xl p-1 shadow-2xl">
-              <div className="bg-white rounded-xl p-8">
+            <div className="bg-gradient-to-r from-primary/20 to-secondary/20 rounded-2xl p-1 shadow-2xl">
+              <div className="bg-card rounded-xl p-8 border border-border">
                 <div className="text-center">
                   <Icon name="ShieldCheck" size={48} className="text-primary mx-auto mb-4" />
                   <h3 className="text-xl font-bold mb-3">Официальная программа</h3>

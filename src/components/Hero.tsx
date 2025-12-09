@@ -9,11 +9,12 @@ const Hero = () => {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center pt-20 bg-gradient-to-br from-blue-50 via-white to-red-50">
-      <div className="absolute inset-0 overflow-hidden opacity-10">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-primary rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary rounded-full blur-3xl animate-pulse delay-1000"></div>
+    <section id="hero" className="relative min-h-screen flex items-center pt-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+      <div className="absolute inset-0 overflow-hidden opacity-5">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-primary rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary rounded-full blur-3xl"></div>
       </div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(74,82,64,0.1),transparent_50%)]"></div>
 
       <div className="container mx-auto px-4 py-20 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -36,16 +37,16 @@ const Hero = () => {
             </p>
 
             <div className="grid sm:grid-cols-3 gap-6">
-              <div className="bg-white rounded-xl p-5 shadow-sm border border-border hover:shadow-md transition-shadow">
-                <div className="text-3xl font-bold text-primary mb-1">1.1 млн ₽</div>
+              <div className="bg-card rounded-xl p-5 shadow-sm border border-border hover:shadow-md transition-shadow">
+                <div className="text-3xl font-bold text-secondary mb-1">1.1 млн ₽</div>
                 <div className="text-sm text-muted-foreground">Единовременная выплата</div>
               </div>
-              <div className="bg-white rounded-xl p-5 shadow-sm border border-border hover:shadow-md transition-shadow">
-                <div className="text-3xl font-bold text-primary mb-1">от 210 тыс ₽</div>
+              <div className="bg-card rounded-xl p-5 shadow-sm border border-border hover:shadow-md transition-shadow">
+                <div className="text-3xl font-bold text-secondary mb-1">от 210 тыс ₽</div>
                 <div className="text-sm text-muted-foreground">Ежемесячно</div>
               </div>
-              <div className="bg-white rounded-xl p-5 shadow-sm border border-border hover:shadow-md transition-shadow">
-                <div className="text-3xl font-bold text-primary mb-1">1-2 дня</div>
+              <div className="bg-card rounded-xl p-5 shadow-sm border border-border hover:shadow-md transition-shadow">
+                <div className="text-3xl font-bold text-secondary mb-1">1-2 дня</div>
                 <div className="text-sm text-muted-foreground">Гражданство РФ</div>
               </div>
             </div>
@@ -60,7 +61,7 @@ const Hero = () => {
               </button>
               <button
                 onClick={() => scrollToSection('about')}
-                className="bg-white text-foreground px-8 py-4 rounded-lg font-semibold text-lg hover:bg-muted transition-colors shadow-lg hover:shadow-xl flex items-center gap-2"
+                className="bg-card text-foreground border border-border px-8 py-4 rounded-lg font-semibold text-lg hover:bg-muted transition-colors shadow-lg hover:shadow-xl flex items-center gap-2"
               >
                 Узнать подробнее
                 <Icon name="Info" size={20} />
@@ -69,8 +70,8 @@ const Hero = () => {
           </div>
 
           <div className="relative">
-            <div className="bg-gradient-to-br from-primary to-secondary rounded-2xl p-8 shadow-2xl">
-              <div className="bg-white rounded-xl p-8 space-y-6">
+            <div className="bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl p-1 shadow-2xl">
+              <div className="bg-card rounded-xl p-8 space-y-6 border border-border">
                 <div className="flex items-start gap-4">
                   <div className="bg-primary/10 p-3 rounded-lg">
                     <Icon name="Users" size={28} className="text-primary" />

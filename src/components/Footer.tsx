@@ -24,7 +24,7 @@ const Footer = () => {
             </p>
             <div className="flex gap-4">
               <a
-                href="https://wa.me/88003026735"
+                href="https://wa.me/79990955559"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white/10 hover:bg-white/20 p-3 rounded-lg transition-colors"
@@ -32,7 +32,7 @@ const Footer = () => {
                 <Icon name="MessageCircle" size={20} />
               </a>
               <a
-                href="https://t.me/+88003026735"
+                href="https://t.me/+79990955559"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white/10 hover:bg-white/20 p-3 rounded-lg transition-colors"
@@ -40,7 +40,7 @@ const Footer = () => {
                 <Icon name="Send" size={20} />
               </a>
               <a
-                href="tel:88003026735"
+                href="tel:+79990955559"
                 className="bg-white/10 hover:bg-white/20 p-3 rounded-lg transition-colors"
               >
                 <Icon name="Phone" size={20} />
@@ -137,10 +137,10 @@ const Footer = () => {
                   <div>
                     <p className="text-sm text-gray-400 mb-1">Горячая линия</p>
                     <a
-                      href="tel:88003026735"
+                      href="tel:+79990955559"
                       className="text-white font-semibold hover:text-primary transition-colors"
                     >
-                      8 (800) 302-67-35
+                      +7 (999) 095-55-59
                     </a>
                   </div>
                 </div>

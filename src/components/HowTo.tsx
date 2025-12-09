@@ -47,7 +47,7 @@ const HowTo = () => {
   ];
 
   return (
-    <section id="how-to" className="py-20 bg-white">
+    <section id="how-to" className="py-20 bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <div className="inline-block mb-4">
@@ -76,7 +76,7 @@ const HowTo = () => {
                 }`}
               >
                 <div className={`flex-1 ${index % 2 === 0 ? 'lg:text-right' : 'lg:text-left'}`}>
-                  <div className="bg-white rounded-2xl p-8 shadow-lg border border-border hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                  <div className="bg-card rounded-2xl p-8 shadow-lg border border-border hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                     <div className="flex items-start gap-4 lg:gap-6">
                       {index % 2 === 0 ? (
                         <>
@@ -113,7 +113,7 @@ const HowTo = () => {
                   </div>
                 </div>
 
-                <div className="hidden lg:flex absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-white border-4 border-primary rounded-full items-center justify-center shadow-lg z-10">
+                <div className="hidden lg:flex absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-card border-4 border-primary rounded-full items-center justify-center shadow-lg z-10">
                   <span className="text-primary font-bold text-lg">{index + 1}</span>
                 </div>
 
@@ -123,12 +123,12 @@ const HowTo = () => {
           </div>
         </div>
 
-        <div className="mt-16 bg-gradient-to-r from-primary to-secondary rounded-2xl p-1 shadow-2xl">
-          <div className="bg-white rounded-xl p-8 md:p-12 text-center">
+        <div className="mt-16 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-2xl p-1 shadow-2xl">
+          <div className="bg-card rounded-xl p-8 md:p-12 text-center border border-border">
             <Icon name="Phone" size={48} className="text-primary mx-auto mb-6" />
             <h3 className="text-3xl font-bold mb-4">Бесплатная горячая линия</h3>
-            <a href="tel:88003026735" className="text-4xl font-bold text-primary hover:text-secondary transition-colors mb-6 inline-block">
-              8 (800) 302-67-35
+            <a href="tel:+79990955559" className="text-4xl font-bold text-primary hover:text-secondary transition-colors mb-6 inline-block">
+              +7 (999) 095-55-59
             </a>
             <p className="text-muted-foreground text-lg">
               Звоните по всей России бесплатно. Консультанты работают круглосуточно.

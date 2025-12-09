@@ -41,7 +41,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-gradient-to-br from-white via-blue-50/30 to-red-50/30">
+    <section id="about" className="py-20 bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <div className="inline-block mb-4">
@@ -62,7 +62,7 @@ const About = () => {
           {benefits.map((benefit, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl p-8 shadow-sm border border-border hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              className="bg-card rounded-2xl p-8 shadow-sm border border-border hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
             >
               <div className={`inline-flex p-4 rounded-xl mb-6 ${benefit.color === 'primary' ? 'bg-primary/10' : 'bg-secondary/10'}`}>
                 <Icon
@@ -77,8 +77,8 @@ const About = () => {
           ))}
         </div>
 
-        <div className="bg-gradient-to-r from-primary to-secondary rounded-2xl p-1 shadow-2xl">
-          <div className="bg-white rounded-xl p-8 md:p-12">
+        <div className="bg-gradient-to-r from-primary/20 to-secondary/20 rounded-2xl p-1 shadow-2xl">
+          <div className="bg-card rounded-xl p-8 md:p-12 border border-border">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
                 <h3 className="text-3xl font-bold mb-6">Дополнительные льготы</h3>
@@ -118,15 +118,15 @@ const About = () => {
 
               <div className="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-xl p-8">
                 <div className="space-y-6">
-                  <div className="bg-white rounded-lg p-6 shadow-sm">
+                  <div className="bg-background rounded-lg p-6 shadow-sm border border-border">
                     <div className="text-sm text-muted-foreground mb-2">Единовременная выплата</div>
-                    <div className="text-4xl font-bold text-primary">1 100 000 ₽</div>
+                    <div className="text-4xl font-bold text-secondary">1 100 000 ₽</div>
                   </div>
-                  <div className="bg-white rounded-lg p-6 shadow-sm">
+                  <div className="bg-background rounded-lg p-6 shadow-sm border border-border">
                     <div className="text-sm text-muted-foreground mb-2">Ежемесячное денежное довольствие</div>
-                    <div className="text-4xl font-bold text-primary">от 210 000 ₽</div>
+                    <div className="text-4xl font-bold text-secondary">от 210 000 ₽</div>
                   </div>
-                  <div className="bg-white rounded-lg p-6 shadow-sm">
+                  <div className="bg-background rounded-lg p-6 shadow-sm border border-border">
                     <div className="text-sm text-muted-foreground mb-2">Страховка от МО РФ семье</div>
                     <div className="text-4xl font-bold text-secondary">6 000 000 ₽</div>
                   </div>

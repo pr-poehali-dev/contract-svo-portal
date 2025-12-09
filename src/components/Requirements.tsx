@@ -60,7 +60,7 @@ const Requirements = () => {
   ];
 
   return (
-    <section id="requirements" className="py-20 bg-gradient-to-br from-blue-50/30 via-white to-red-50/30">
+    <section id="requirements" className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <div className="inline-block mb-4">
@@ -81,7 +81,7 @@ const Requirements = () => {
           {requirements.map((req, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl p-8 shadow-lg border border-border hover:shadow-xl transition-all duration-300"
+              className="bg-card rounded-2xl p-8 shadow-lg border border-border hover:shadow-xl transition-all duration-300"
             >
               <div className="flex items-center gap-4 mb-6">
                 <div className={`p-4 rounded-xl ${req.color === 'primary' ? 'bg-primary/10' : 'bg-secondary/10'}`}>
@@ -111,8 +111,8 @@ const Requirements = () => {
           ))}
         </div>
 
-        <div className="bg-gradient-to-r from-primary to-secondary rounded-2xl p-1 shadow-2xl mb-16">
-          <div className="bg-white rounded-xl p-8 md:p-12">
+        <div className="bg-gradient-to-r from-primary/20 to-secondary/20 rounded-2xl p-1 shadow-2xl mb-16">
+          <div className="bg-card rounded-xl p-8 md:p-12 border border-border">
             <div className="text-center mb-12">
               <h3 className="text-3xl font-bold mb-4">Необходимые документы</h3>
               <p className="text-muted-foreground text-lg">
@@ -184,7 +184,7 @@ const Requirements = () => {
           </div>
         </div>
 
-        <div className="bg-white rounded-2xl p-8 md:p-12 shadow-lg">
+        <div className="bg-card rounded-2xl p-8 md:p-12 shadow-lg border border-border">
           <div className="text-center mb-12">
             <h3 className="text-3xl font-bold mb-4">Доступные специальности</h3>
             <p className="text-muted-foreground text-lg">
